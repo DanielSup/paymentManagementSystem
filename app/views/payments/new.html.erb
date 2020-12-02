@@ -1,0 +1,6 @@
+<h1><%= I18n.t(:label_new_payment) %></h1>
+<p><%= I18n.t(:description_add_or_edit_payment) %></p>
+
+<%= render 'form', payment: @payment %>
+
+<%= link_to I18n.t(:button_show), payments_path, class: 'btn btn-warning' %>

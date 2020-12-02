@@ -1,0 +1,26 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+#
+one:
+  description: income
+  amount: 2.25
+  user: one
+
+two:
+  description: income2
+  amount: 2.25
+  user: one
+
+three:
+  description: income
+  amount: 2.25
+  user: two
+
+four:
+  description: expense
+  amount: -2
+  user: one
+
+five:
+  description: expense
+  amount: -2
+  user: two

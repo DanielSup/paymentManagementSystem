@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1><%= I18n.t(:label_payments) %></h1>
+
+<dl class="d-inline-flex">
+  <dt class="payment_statistics_header"><%= I18n.t(:label_incomes) %></dt>
+  <dd class="payment_statistics_value"><%= Payment.incomes(current_user.id) %> <%= I18n.t(:label_currency_czk) %></dd>
+  <dt class="payment_statistics_header"><%= I18n.t(:label_expenses) %></dt>
+  <dd class="payment_statistics_value"><%= Payment.expenses(current_user.id) %> <%= I18n.t(:label_currency_czk) %></dd>
+  <dt class="payment_statistics_header"><%= I18n.t(:label_balance) %></dt>
+  <dd class="payment_statistics_value"><%= Payment.balance(current_user.id) %> <%= I18n.t(:label_currency_czk) %></dd>
+</dl>
+
+<table>
+  <thead>
+    <tr>
+      <th class="data-cell"><%= I18n.t(:'activerecord.attributes.payment.description') %></th>
+      <th class="data-cell"><%= I18n.t(:'activerecord.attributes.payment.amount') %></th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @payments.each do |payment| %>
+      <tr>
+        <td class="data-cell"><%= payment.description %></td>
+        <td class="data-cell"><%= payment.amount %> <%= I18n.t(:label_currency_czk) %></td>
+        <td><%= link_to I18n.t(:button_show), payment, class: 'btn btn-primary' %></td>
+        <td><%= link_to I18n.t(:button_edit), edit_payment_path(payment), class: 'btn btn-warning' %></td>
+        <td><%= link_to I18n.t(:button_destroy), payment, method: :delete, data: { confirm: I18n.t(:warning_are_you_sure) }, class: 'btn btn-danger' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= paginate @payments %>
+
+<br>
+
+<%= link_to I18n.t(:label_new_payment), new_payment_path, class: 'btn btn-primary' %>

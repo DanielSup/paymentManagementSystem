@@ -1,0 +1,24 @@
+<table>
+  <thead>
+  <tr>
+    <th class="data-cell"><%= I18n.t(:label_email) %></th>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @users.each do |user| %>
+    <tr>
+      <td class="data-cell"><%= user.email %></td>
+      <td>
+        <% if user.active %>
+          <%= link_to I18n.t(:button_deactivate), user, method: :patch, data: { confirm: I18n.t(:warning_are_you_sure) }, class: 'btn btn-danger' %>
+        <% else %>
+          <%= I18n.t(:label_deactivated) %>
+        <% end %>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+<%= paginate @users %>

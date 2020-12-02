@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= I18n.t(:title_payments_manage_system) %></title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="row">
+        <div class="col-sm-9">
+          <ul class="list-inline">
+            <% if user_signed_in? %>
+              <li class="list-inline-item btn btn-secondary main_button_with_link">
+                <%= link_to I18n.t(:label_payments), payments_path %>
+              </li>
+              <% if can? :manage, User.new %>
+                <li class="list-inline-item btn btn-secondary main_button_with_link">
+                  <%= link_to I18n.t(:label_users), users_path %>
+                </li>
+              <% end %>
+            <% end %>
+          </ul>
+        </div>
+        <div class="col-sm-3 text-right">
+          <% if user_signed_in? %>
+              <%= link_to(I18n.t(:button_logout), destroy_user_session_path, method: :delete, class: 'btn btn-light') %>
+          <% end %>
+        </div>
+      </div>
+      <div class="row">
+        <ol class="transparent_breadcrumb breadcrumb">
+          <%= render_breadcrumbs tag: :li, separator: '' %>
+        </ol>
+      </div>
+    </nav>
+
+    <% unless user_signed_in? %>
+      <% flash.each do |name, msg| %>
+        <% unless msg == I18n.t('devise.failure.unauthenticated') %>
+          <%= content_tag :div, msg, id: "flash_#{name}", class: 'text-danger' %>
+        <% end %>
+      <% end %>
+    <% end %>
+
+    <div class="page_content">
+      <%= yield %>
+    </div>
+  </body>
+</html>

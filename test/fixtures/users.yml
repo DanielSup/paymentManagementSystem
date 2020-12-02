@@ -1,0 +1,14 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+## column: value
+##
+one:
+  email: test@test.cz
+  encrypted_password: $2a$12$wfd8C6IH5zvqV08s//Vkjemu8wUs7P9gCHejSqgvYmH0rBFLJR5EO
+  admin: 1
+  confirmed_at: 2020-11-30 00:00 +01:00
+
+two:
+  email: test2@test.cz
+  encrypted_password: $2a$12$wfd8C6IH5zvqV08s//Vkjemu8wUs7P9gCHejSqgvYmH0rBFLJR5EO
+  confirmed_at: 2020-11-30 00:00 +01:00

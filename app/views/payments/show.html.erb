@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+<h1><%= @payment.description %></h1>
+<p>
+  <strong><%= I18n.t(:'activerecord.attributes.payment.description') %>:</strong>
+  <%= @payment.description %>
+</p>
+
+<p>
+  <strong><%= I18n.t(:'activerecord.attributes.payment.amount') %>:</strong>
+  <%= @payment.amount %>
+</p>
+
+<p>
+  <strong><%= I18n.t(:'activerecord.attributes.payment.user') %>:</strong>
+  <%= @payment.user.email %>
+</p>
+
+<p>
+  <strong><%= I18n.t(:'activerecord.attributes.payment.tags') %>:</strong>
+  <%= @payment.tag_list.join(', ') %>
+<p>
+
+<%= link_to I18n.t(:button_edit), edit_payment_path(@payment), class: 'btn btn-primary' %> |
+<%= link_to I18n.t(:button_back), payments_path, class: 'btn btn-warning' %>

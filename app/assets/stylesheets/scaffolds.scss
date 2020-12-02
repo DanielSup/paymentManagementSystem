@@ -1,0 +1,135 @@
+body {
+  background-color: #fff;
+  color: #333;
+  margin: 33px; }
+
+body, p, ol, ul, td {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px; }
+
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px; }
+
+a {
+  color: #000; }
+
+a.btn-primary:visited {
+  color: #ccf;
+}
+
+a.btn-danger:visited {
+  color: #ccf;
+}
+
+a:not(.btn-primary):not(.btn-danger):visited {
+  color: #666;
+}
+
+a:hover {
+  color: #fff;
+  background-color: #000; }
+
+th {
+  padding-bottom: 5px; }
+
+td {
+  padding: 0 5px 7px; }
+
+div.field,
+div.actions {
+  margin-bottom: 10px; }
+
+.main_button_with_link {
+  border: 1px solid #666;
+}
+
+.main_button_with_link a {
+  padding: 0.75em;
+  font-weight: bolder;
+}
+
+.main_button_with_link a:hover {
+  color: white;
+}
+
+.main_button_with_link a:visited:hover {
+  color: navajowhite;
+}
+
+#notice {
+  color: green; }
+
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table; }
+
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px 7px 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0; }
+
+#error_explanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px -7px 0;
+  background-color: #c00;
+  color: #fff; }
+
+#error_explanation ul li {
+  font-size: 12px;
+  list-style: square; }
+
+label {
+  display: block; }
+
+.navbar {
+  background-color: #ddd;
+}
+
+.navbar .list-inline{
+  padding-left: 1em;
+}
+
+.data-cell{
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+}
+
+.pagination{
+  margin-left: 0.5em !important;
+}
+
+.page_content{
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+}
+
+.payment_statistics_header{
+  max-width: 9em;
+  padding-right: 1em;
+  margin: 0;
+  display: inline-block;
+}
+
+.payment_statistics_value{
+  max-width: 50%;
+  padding-right: 1em;
+  margin: 0;
+  display: inline-block;
+}
+
+.breadcrumb{
+  margin-left: 0.5em;
+}
+
+.transparent_breadcrumb{
+  background-color: transparent !important;
+}
